@@ -184,7 +184,7 @@ export default function HRISPage() {
   const updateStage = async (appId: string, newStage: string, email: string) => {
     await update(ref(rtdb, `applications/${appId}`), { status: newStage });
     try {
-      await fetch("http://127.0.0.1:8000/notify-status", {
+      await fetch("https://hiresense-ats.onrender.com/notify-status", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, status: newStage }),
@@ -214,7 +214,7 @@ export default function HRISPage() {
       });
 
       try {
-        await fetch("http://127.0.0.1:8000/notify-status", {
+        await fetch("https://hiresense-ats.onrender.com/notify-status", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -256,7 +256,7 @@ export default function HRISPage() {
       });
 
       try {
-        await fetch("http://127.0.0.1:8000/notify-status", {
+        await fetch("https://hiresense-ats.onrender.com/notify-status", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

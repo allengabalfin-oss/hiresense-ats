@@ -28,7 +28,7 @@ if not firebase_admin._apps:
 
 app = FastAPI(title="HireSense AI Evaluation Service")
 
-# Expose uploaded resumes statically at http://127.0.0.1:8000/resumes/<filename>
+# Expose uploaded resumes statically at https://hiresense-ats.onrender.com/resumes/<filename>
 app.mount("/resumes", StaticFiles(directory=UPLOAD_DIR), name="resumes")
 
 # Allow Next.js client requests
@@ -120,7 +120,7 @@ async def evaluate_application(
         match_score = calculate_match_score(extracted_skills, required_skills)
 
         # 3. Serve via FastAPI static endpoint
-        resume_url = f"http://127.0.0.1:8000/resumes/{file_filename}"
+        resume_url = f"https://hiresense-ats.onrender.com/resumes/{file_filename}"
 
         # 4. Save into Firebase RTDB
         app_ref = db.reference(f"applications/{application_id}")

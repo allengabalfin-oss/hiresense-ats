@@ -228,7 +228,7 @@ export default function ApplicantPortal() {
       formData.append("job_id", selectedJobId);
       formData.append("resume", resumeFile);
 
-      const res = await fetch("http://127.0.0.1:8000/evaluate", {
+      const res = await fetch("https://hiresense-ats.onrender.com/evaluate", {
         method: "POST",
         body: formData,
       });
